@@ -8,7 +8,7 @@ Para instalar el proyecto localmente, se requiere tener instalado los siguientes
 * Lenguaje `Go 1.13.3` o superior 
 
 ## Instalacion
-* Instalar desde la pagina oficial [Go.org](https://golang.org/dl/) ``
+* Instalar desde la pagina oficial [Go.org](https://golang.org/dl/)
 * posteriormente deberas instalar testify usando el comando: 
 
 ``` sh
