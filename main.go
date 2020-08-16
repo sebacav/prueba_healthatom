@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"math"
 	"sort"
 	"strconv"
@@ -13,11 +14,14 @@ var HistoricoCPU []float64
 
 func main() {
 
-	a, b := RemoverCuatros(9463434)
+	// a, b := RemoverCuatros(math.Pow10(101))
+
 	// transformamos los numeros a un string, de manera de poderlo leer
 	// de una manera bonita en la pantalla
 	// aString := strconv.FormatFloat(a, 'f', -1, 64)
 	// bString := strconv.FormatFloat(b, 'f', -1, 64)
+
+	a, b := RemoverCuatros(9463434)
 	fmt.Println(a, b)
 	fmt.Println(Healthcheck(2, 3))
 	fmt.Println(Healthcheck(5, 3))
@@ -35,6 +39,9 @@ func main() {
 // para que de esta manera podamos al final, restar y obtener siempre
 // un número que no tendrá cuatros en sus cifras
 func RemoverCuatros(numero float64) (float64, float64) {
+	if numero < 1 || numero > math.Pow10(100) {
+		log.Fatal("Input no Validos")
+	}
 	// Se transforma el numero a un string
 	numeroString := strconv.FormatFloat(numero, 'f', -1, 64)
 
@@ -80,6 +87,9 @@ func ObtenerReductorDeCuatros(numero string) float64 {
 // si es momento de alarmar o no. el HistoricoCPU es una variable global
 // esta se va llenando cada vez que se llama a esta funcion (Healthcheck)
 func Healthcheck(cpu float64, largoVentana int) bool {
+	if cpu < 0 || cpu > 100 || largoVentana < 0 || float64(largoVentana) > math.Pow10(100) {
+		log.Fatal("Input no Validos")
+	}
 
 	// Se declara la mediana
 	var median float64
