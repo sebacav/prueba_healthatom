@@ -7,7 +7,7 @@ import (
 )
 
 func TestEsPar(t *testing.T) {
-	par := ValidarPar(88)
+	par := ValidarPar(9)
 	assert.True(t, par, "ValidarPar debería ser par")
 	par = ValidarPar(3)
 	assert.False(t, par, "ValidarPar debería ser par")

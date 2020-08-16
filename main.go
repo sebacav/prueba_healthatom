@@ -23,6 +23,7 @@ func main() {
 
 	a, b := RemoverCuatros(9463434)
 	fmt.Println(a, b)
+
 	fmt.Println(Healthcheck(2, 3))
 	fmt.Println(Healthcheck(5, 3))
 	fmt.Println(Healthcheck(5, 3))
@@ -110,10 +111,10 @@ func Healthcheck(cpu float64, largoVentana int) bool {
 	// Se hace el calculo que solicita el requerimiento
 	if cpu >= 2*median {
 		// Se retorna false, que es un equivalente al 0
-		return false
+		return false // 0
 	}
 	// Se retorna true, que es un equivalente al 1
-	return true
+	return true // 1
 }
 
 // ObtenerMediana nos permite obtener la mediana dado los requerimientos
